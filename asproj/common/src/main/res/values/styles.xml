@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="inputTextAppearance">
+        <item name="hintColor">@color/color_C1B</item>
+        <item name="inputColor">@color/color_565</item>
+        <item name="textSize">15sp</item>
+    </style>
+
+    <style name="inputTextAppearance_limitLength" parent="inputTextAppearance">
+        <item name="maxInputLength">4</item>
+    </style>
+
+
+    <style name="titleTextAppearance">
+        <item name="titleColor">@color/color_565</item>
+        <item name="titleSize">15sp</item>
+        <item name="minWidth">100dp</item>
+    </style>
+
+    <!--       <attr name="color" format="color"></attr>
+            <attr name="height" format="dimension"></attr>
+            <attr name="leftMargin" format="dimension"></attr>
+            <attr name="rightMargin" format="dimension"></attr>
+            <attr name="enable" format="boolean"></attr>-->
+
+    <style name="lineAppearance">
+        <item name="color">@color/color_C1B</item>
+        <item name="height">0.5dp</item>
+        <item name="leftMargin">0dp</item>
+        <item name="rightMargin">0dp</item>
+        <item name="enable">true</item>
+    </style>
+
+
+    <style name="leftMargin_lineAppearance" parent="lineAppearance">
+        <item name="leftMargin">10dp</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="hiNavigationStyle">@style/navigationStyle</item>
+        <item name="hiSearchViewStyle">@style/searchViewStyle</item>
+    </style>
+</resources>

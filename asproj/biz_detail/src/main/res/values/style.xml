@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="detailGoodsAttrItemTitleStyle">
+        <item name="titleColor">@color/color_999</item>
+        <item name="textSize">@dimen/sp_14</item>
+        <item name="minWidth">160dp</item>
+
+    </style>
+
+    <style name="detailGoodsAttrItemHintStyle">
+        <item name="hintColor">@color/color_666</item>
+        <item name="textSize">15sp</item>
+    </style>
+</resources>

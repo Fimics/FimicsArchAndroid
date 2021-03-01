@@ -1,0 +1,14 @@
+{
+	"client":{
+		"appType":"1",
+		"cp_id":"260086000046467390",
+		"product_id":"736430079244694191",
+		"client_id":"491112561341629504",
+		"client_secret":"970930FFE1C57FAAF580CD6630A04824CA951566B826B283E5A7A83B0B3E378B",
+		"project_id":"736430079244694191",
+		"app_id":"103229587",
+		"api_key":"CgB6e3x9K+VfnKwWlMmu8jS2D6e9tVer8P8iV9cs5fKAjISVANPEiTTwW9JqRWkwUDxNVN34VntgROtIpqQ83OAV",
+		"package_name":"org.devio.as.proj.main"
+	},
+	"configuration_version":"1.0"
+}

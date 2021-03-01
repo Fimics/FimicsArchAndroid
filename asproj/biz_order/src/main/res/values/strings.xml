@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_order_confirm">确认订单</string>
+    <string name="add_order_address">手动添加收货地址</string>
+    <string name="amount_of_order">购买数量</string>
+    <string name="channel_wx_pay">微信支付</string>
+    <string name="total_pay">实付款:</string>
+    <string name="pay_now">立即支付</string>
+    <string name="free_transport">¥ %s  免运费</string>
+    <string name="title_new_address">编辑地址</string>
+    <string name="address_hint_detail">比如所在街道</string>
+    <string name="address_title_detail">详细地址</string>
+    <string name="address_hint_pick">请选择</string>
+    <string name="address_title_area">地区</string>
+    <string name="address_hint_phone">收货人手机号</string>
+    <string name="address_title_phone">手机号</string>
+    <string name="address_hint_recevier">收货人姓名</string>
+    <string name="address_title_recevier">用户名</string>
+    <string name="address_save">保存</string>
+    <string name="address_info_too_simple">请完善地址信息</string>
+    <string name="city_data_set_empty">城市数据为空，无法拉起市选择器</string>
+    <string name="nav_add_address">新增</string>
+    <string name="address_default">已设为默认</string>
+    <string name="set_default_address">点击设为默认"</string>
+    <string name="title_address">收货地址</string>
+    <string name="item_edit_address">编辑</string>
+    <string name="address_delete_title">当真要删除这条收货地址？</string>
+    <string name="address_delete_ensure">当真</string>
+    <string name="address_delete_cancel">不小心</string>
+</resources>

@@ -1,0 +1,78 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.devio.as.hi.hi_arouter"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml
+10
+11    <application
+11-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:6:5-37:19
+12        android:name="org.devio.as.hi.hi_arouter.ArouterApplication"
+12-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:7:9-43
+13        android:allowBackup="true"
+13-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:8:9-35
+14        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+14-->[androidx.core:core:1.2.0] /Users/timian/.gradle/caches/transforms-2/files-2.1/84faa6934503089f71f9a6623f743090/core-1.2.0/AndroidManifest.xml:24:18-86
+15        android:debuggable="true"
+16        android:icon="@mipmap/ic_launcher"
+16-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:9:9-43
+17        android:label="@string/app_name"
+17-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:10:9-41
+18        android:roundIcon="@mipmap/ic_launcher_round"
+18-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:11:9-54
+19        android:supportsRtl="true"
+19-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:12:9-35
+20        android:testOnly="true"
+21        android:theme="@style/AppTheme" >
+21-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:13:9-40
+22        <activity android:name="org.devio.as.hi.hi_arouter.MainActivity" >
+22-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:14:9-20:20
+22-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:14:19-47
+23            <intent-filter>
+23-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:15:13-19:29
+24                <action android:name="android.intent.action.MAIN" />
+24-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:16:17-69
+24-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:16:25-66
+25
+26                <category android:name="android.intent.category.LAUNCHER" />
+26-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:18:17-77
+26-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:18:27-74
+27            </intent-filter>
+28        </activity>
+29        <activity android:name="org.devio.as.hi.hi_arouter.SecondActivity" />
+29-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:22:9-61
+29-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:22:19-49
+30        <activity android:name="org.devio.as.hi.hi_arouter.SchemeFilterActivity" >
+30-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:24:9-36:20
+30-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:24:19-55
+31
+32            <!-- Scheme -->
+33            <intent-filter>
+33-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:26:13-35:29
+34                <data
+34-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:27:17-29:47
+35                    android:host="m.aliyun.com"
+35-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:28:21-48
+36                    android:scheme="arouter" />
+36-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:29:21-45
+37
+38                <action android:name="android.intent.action.VIEW" />
+38-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:31:17-68
+38-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:31:25-66
+39
+40                <category android:name="android.intent.category.DEFAULT" />
+40-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:33:17-75
+40-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:33:27-73
+41                <category android:name="android.intent.category.BROWSABLE" />
+41-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:34:17-77
+41-->/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/src/main/AndroidManifest.xml:34:27-75
+42            </intent-filter>
+43        </activity>
+44    </application>
+45
+46</manifest>

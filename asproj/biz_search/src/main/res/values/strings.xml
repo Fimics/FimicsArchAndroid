@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="if_search">&#xe987;</string>
+    <string name="if_clear">&#xe60b;</string>
+    <string name="if_delete">&#xe60a;</string>
+    <string name="nav_item_search"> 搜索</string>
+    <string name="search_hint">试试输入iphone搜索</string>
+    <string name="search_recent">&#xe6d0; 最近搜索</string>
+</resources>

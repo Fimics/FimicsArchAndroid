@@ -1,0 +1,33 @@
+server:
+  port: 5088
+  compression:
+    enabled: true
+spring:
+  # 配置数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/mytest?characterEncoding=utf8&useSSL=true
+    username: xxx #数据库用户名
+    password: xxx #数据库密码
+  # Redis数据源
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 6000
+    #    password: xxx
+    jedis:
+      pool:
+        max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 10      # 连接池中的最大空闲连接
+        min-idle: 5       # 连接池中的最小空闲连接
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml  # 注意:一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.example.as.api.entity  # 注意:对应实体类的路径
+  configuration:
+    map-underscore-to-camel-case: true # 数据库字段下划线自动转驼峰
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: false #如果开启分页优化，在分页的时候如果没有数据，会显示有数据页面的数据
+  supportMethodsArguments: true
+  params: count=countSql

@@ -1,0 +1,138 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField("String", "UMENG_API_KEY", "\"${UMENG_API_KEY}\"")
+            buildConfigField("String", "UMENG_MESSAGE_SECRET", "\"${UMENG_MESSAGE_SECRET}\"")
+
+            buildConfigField("String", "HUAEWI_APP_ID", "\"${HUAEWI_APP_ID}\"")
+            buildConfigField("String", "HUAEWI_APP_KEY", "\"${HUAEWI_APP_KEY}\"")
+            buildConfigField("String", "HUAWEI_APP_SECRET", "\"${HUAWEI_APP_SECRET}\"")
+
+            buildConfigField("String", "MIPUSH_APP_ID", "\"${MIPUSH_APP_ID}\"")
+            buildConfigField("String", "MIPUSH_API_KEY", "\"${MIPUSH_API_KEY}\"")
+
+            buildConfigField("String", "OPPO_API_KEY", "\"${OPPO_API_KEY}\"")
+            buildConfigField("String", "OPPO_API_SECRET", "\"${OPPO_API_SECRET}\"")
+
+            buildConfigField("String", "VIVO_APP_ID", "\"${VIVO_APP_ID}\"")
+            buildConfigField("String", "VIVO_APP_KEY", "\"${VIVO_APP_KEY}\"")
+
+            buildConfigField("String", "QQ_SHARE_APP_ID", "\"${QQ_SHARE_APP_ID}\"")
+            buildConfigField("String", "QQ_SHARE_APP_KEY", "\"${QQ_SHARE_APP_KEY}\"")
+
+            buildConfigField("String", "WX_SHARE_APP_KEY", "\"${WX_SHARE_APP_KEY}\"")
+            buildConfigField("String", "WX_SHARE_APP_SECRET", "\"${WX_SHARE_APP_SECRET}\"")
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "UMENG_API_KEY", "\"${UMENG_API_KEY}\"")
+            buildConfigField("String", "UMENG_MESSAGE_SECRET", "\"${UMENG_MESSAGE_SECRET}\"")
+
+            buildConfigField("String", "HUAEWI_APP_ID", "\"${HUAEWI_APP_ID}\"")
+            buildConfigField("String", "HUAEWI_APP_KEY", "\"${HUAEWI_APP_KEY}\"")
+            buildConfigField("String", "HUAWEI_APP_SECRET", "\"${HUAWEI_APP_SECRET}\"")
+
+            buildConfigField("String", "MIPUSH_APP_ID", "\"${MIPUSH_APP_ID}\"")
+            buildConfigField("String", "MIPUSH_API_KEY", "\"${MIPUSH_API_KEY}\"")
+
+            buildConfigField("String", "OPPO_API_KEY", "\"${OPPO_API_KEY}\"")
+            buildConfigField("String", "OPPO_API_SECRET", "\"${OPPO_API_SECRET}\"")
+
+            buildConfigField("String", "VIVO_APP_ID", "\"${VIVO_APP_ID}\"")
+            buildConfigField("String", "VIVO_APP_KEY", "\"${VIVO_APP_KEY}\"")
+
+            buildConfigField("String", "QQ_SHARE_APP_ID", "\"${QQ_SHARE_APP_ID}\"")
+            buildConfigField("String", "QQ_SHARE_APP_KEY", "\"${QQ_SHARE_APP_KEY}\"")
+
+            buildConfigField("String", "WX_SHARE_APP_KEY", "\"${WX_SHARE_APP_KEY}\"")
+            buildConfigField("String", "WX_SHARE_APP_SECRET", "\"${WX_SHARE_APP_SECRET}\"")
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    //开启jumboMode开关，tinker在diff时，可以使得dex文件更小
+    dexOptions {
+        jumboMode = true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    androidExtensions {
+        experimental = true
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+}
+
+apply from: '../dependency.gradle'
+def dependency = rootProject.ext.dependencies
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar","*.aar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    implementation dependency.appcompat
+    implementation dependency.material
+    implementation dependency.recyclerview
+    implementation project(path: ':hi-library')
+
+
+    //share
+    implementation 'com.tencent.tauth:qqopensdk:3.51.1'
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+
+    //huawei scan
+    //implementation 'com.huawei.hms:scan:{version}'
+    implementation 'com.huawei.hms:scan:1.2.4.300'
+
+    // 下面各SDK根据宿主App是否使用相关业务按需引入。
+    // OAID目前为目前国内市场主流的Android Q设备标识，可根据需要选择。
+    //注意：OAID目前为目前国内市场主流的Android Q设备标识。
+    // 目前主流厂商（华为、oppo、vivo、联想、小米）均已在新版本系统中支持该标识的获取，具有权威性。
+    // 您可根据需求选择接入（华为已默认接入无需额外添加jar包）。
+    //
+    //特别提醒：如您不在U-App的集成中加入OAID库，
+    // 可能会导致U-App面向Android Q系统的新增、启动、活跃、留存等指标减少，因此，建议您接入OAID库。
+    implementation 'com.umeng.umsdk:oaid_lenovo:1.0.0' // (可选)
+    implementation 'com.umeng.umsdk:oaid_mi:1.0.0' // (可选)
+    implementation 'com.umeng.umsdk:oaid_oppo:1.0.4' // (可选)
+    implementation 'com.umeng.umsdk:oaid_vivo:1.0.0.1' // (可选)
+}
+
+apply from: 'push_dependencies.gradle'

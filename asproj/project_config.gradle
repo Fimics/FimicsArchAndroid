@@ -1,0 +1,29 @@
+android{
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    //开启jumboMode开关，tinker在diff时，可以使得dex文件更小
+    dexOptions {
+        jumboMode = true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+}

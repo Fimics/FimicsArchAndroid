@@ -1,0 +1,17 @@
+*.iml
+.gradle
+gradle
+local.properties
+.idea
+.DS_Store
+build
+captures
+.externalNativeBuild
+gradlew
+gradlew.bat
+将删除 .gitignore
+将删除 build.gradle
+将删除 consumer-rules.pro
+将删除 libs/
+将删除 proguard-rules.pro
+将删除 src/

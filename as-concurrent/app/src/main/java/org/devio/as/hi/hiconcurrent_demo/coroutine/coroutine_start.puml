@@ -1,0 +1,54 @@
+@startuml
+
+interface CoroutineContext{
+  add(Element element)
+  minusKey(Key key)
+  get(Key key)
+}
+
+interface CoroutineContext.Key<E extends Element>
+
+interface CoroutineContext.Element extends CoroutineContext{
+   //所有子类必须复写该方法,以决定在协程上下文中如何存储
+   Key<Element> getKey();
+}
+
+interface ContinuationInterceptor extends CoroutineContext.Element{
+    //允许对协程任务调度,恢复进行拦截
+    Continuation interceptContinuation(Continuation continuation)
+    **getKey()= ContinuationInterceptor.this;**
+    //实现了父类的getKey,并且指定为自己,那么所有ContinuationInterceptor的子类
+    //存储在上下文的时候，它的key都是ContinuationInterceptor
+}
+
+abstract class CoroutineDispatcher implements ContinuationInterceptor{
+   abstract boolean needDispatch()  //询问调度器需不需要分发
+   abstract void dispatch(Runnable Runnable)//由子类去实现具体的调度
+
+   DispatchCoroutine interceptContinuation(Continuation continuation)
+}
+
+class HanderDispather extends CoroutineDispatcher{
+    boolean needDispatch()=>return true
+    dispatch(Runnable Runnable)=>{handler.post(runnable)}
+}
+
+class DefualtScheduler extends CoroutineDispatcher{
+    boolean needDispatch()=>return true
+    dispatch(Runnable Runnable)=>{executors.execute(runnable)}
+}
+
+class UnconfinedDispatcher extends CoroutineDispatcher{
+      boolean needDispatch()=>return false
+      dispatch(Runnable Runnable)=>{ }
+}
+
+note left of CoroutineContext:协程运行环境,一种key-value数据结构,\n- 存储着协程运行的线程调度器,\n- 协程Id,\n- 协程Name,\n-也可自定义存储进去
+note right of CoroutineContext.Key:存储在协程上下文中的元素类型的Key接口
+note left of CoroutineContext.Element:存储在协程上下文中的元素的类型对象
+note left of ContinuationInterceptor:协程调度的拦截器,\n同时声明了该类型存储在协程上下文的Key。
+note left of CoroutineDispatcher:协程运行环境的调度器
+note bottom of HanderDispather:能够让协程运行在主线程的调度器 \n**Dispatchers.Main**
+note bottom of DefualtScheduler:能够让协程运行在IO线程的调度器 \n**Dispatchers.Io,Dispatchers.Default**
+note bottom of UnconfinedDispatcher:能够让协程运行在当前线程的调度器\n**Dispatchers.Unconfined**
+@enduml

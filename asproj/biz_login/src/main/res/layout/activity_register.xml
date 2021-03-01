@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/color_white">
+
+
+        <org.devio.hi.ui.icfont.IconFontTextView
+            android:id="@+id/action_back"
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="@dimen/dp_45"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/if_back"
+            android:textSize="@dimen/sp_24" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/title_register"
+            android:textColor="@color/color_000"
+            android:textSize="@dimen/sp_16" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_d1d2" />
+
+    <org.devio.hi.ui.input.InputItemLayout
+        android:id="@+id/input_item_orderId"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/color_white"
+        android:paddingLeft="@dimen/dp_16"
+        app:bottomLineAppearance="@style/leftMargin_lineAppearance"
+        app:hint="@string/input_item_hint_order_id"
+        app:inputTextAppearance="@style/inputTextAppearance_limitLength"
+        app:inputType="number"
+        app:maxInputLength="4"
+        app:title="@string/input_item_title_course_order_id"
+        app:titleTextAppearance="@style/titleTextAppearance"
+        app:topLineAppearance="@style/lineAppearance" />
+
+    <org.devio.hi.ui.input.InputItemLayout
+        android:id="@+id/input_item_moocId"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="@color/color_white"
+        android:paddingLeft="@dimen/dp_16"
+        app:bottomLineAppearance="@style/leftMargin_lineAppearance"
+        app:hint="@string/input_item_hint_moocid"
+        app:inputTextAppearance="@style/inputTextAppearance"
+        app:inputType="number"
+        app:title="@string/input_item_title_moocid"
+        app:titleTextAppearance="@style/titleTextAppearance" />
+
+
+    <org.devio.hi.ui.input.InputItemLayout
+        android:id="@+id/input_item_username"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="@color/color_white"
+        android:paddingLeft="@dimen/dp_16"
+        app:bottomLineAppearance="@style/leftMargin_lineAppearance"
+        app:hint="@string/input_item_hint_user_name"
+        app:inputTextAppearance="@style/inputTextAppearance"
+        app:inputType="text"
+        app:title="@string/input_item_title_user_name"
+        app:titleTextAppearance="@style/titleTextAppearance" />
+
+    <org.devio.hi.ui.input.InputItemLayout
+        android:id="@+id/input_item_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="@color/color_white"
+        android:paddingLeft="@dimen/dp_16"
+        app:bottomLineAppearance="@style/leftMargin_lineAppearance"
+        app:hint="@string/input_item_hint_pwd"
+        app:inputTextAppearance="@style/inputTextAppearance"
+        app:inputType="password"
+        app:title="@string/input_item_title_pwd"
+        app:titleTextAppearance="@style/titleTextAppearance" />
+
+
+    <org.devio.hi.ui.input.InputItemLayout
+        android:id="@+id/input_item_pwd_check"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="@color/color_white"
+        android:paddingLeft="@dimen/dp_16"
+        app:bottomLineAppearance="@style/lineAppearance"
+        app:hint="@string/input_item_hint_pwd2"
+        app:inputTextAppearance="@style/inputTextAppearance"
+        app:inputType="password"
+        app:title="@string/input_item_title_pwd2"
+        app:titleTextAppearance="@style/titleTextAppearance" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/action_submit"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:gravity="center"
+        android:text="@string/action_submit"
+        android:textSize="16sp"
+        app:backgroundTint="@color/color_dd2"
+        app:cornerRadius="@dimen/dp_6" />
+</LinearLayout>

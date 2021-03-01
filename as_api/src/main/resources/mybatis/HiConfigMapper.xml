@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.as.api.hiconfig.HiConfigMapper">
+    <select id="getConfig" resultType="com.example.as.api.hiconfig.HiConfigModel">
+        SELECT
+            *
+        FROM
+            t_hi_config
+        WHERE
+            `namespace` = #{namespace}
+
+        ORDER BY
+            version DESC
+    </select>
+    <select id="getAllConfig" resultType="com.example.as.api.hiconfig.HiConfigModel">
+        SELECT
+            *
+        FROM
+            t_hi_config
+        WHERE
+            id IN ( SELECT max( id ) FROM t_hi_config GROUP BY namespace )
+        ORDER BY
+            id DESC
+    </select>
+    <insert id="saveConfig" parameterType="com.example.as.api.hiconfig.HiConfigModel">
+        INSERT INTO t_hi_config ( `namespace`, version, create_time, original_url, json_url )
+            VALUES
+	    ( #{namespace}, #{version}, #{createTime}, #{originalUrl}, #{jsonUrl} )
+    </insert>
+</mapper>

@@ -1,0 +1,4 @@
+include ':peace-hybrid'
+include ':peace-core'
+include ':app'
+rootProject.name = "PeaceExample"

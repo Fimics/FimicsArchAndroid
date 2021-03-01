@@ -1,0 +1,99 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: '../dependency.gradle'
+def ext =rootProject.ext
+def dependency =rootProject.ext.dependencies
+android {
+    compileSdkVersion ext.compileSdkVersion
+    buildToolsVersion ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion ext.minSdkVersion
+        targetSdkVersion ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+}
+//rn
+project.ext.react = [
+        entryFile: "index.android.js",
+        enableHermes: false
+]
+
+def enableHermes = project.ext.react.get("enableHermes", false);
+def jscFlavor = 'org.webkit:android-jsc:+'
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+//rn end
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':hi-config')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    api project(path: ':hi-library')
+    api project(path: ':hi-ui')
+    api project(path: ':service_login')
+    api project(path: ':hi-ability')
+
+    implementation dependency.lifecycle_extensions
+    kapt dependency.lifecycle_compiler
+    api dependency.constraintlayout
+    api dependency.appcompat
+    api dependency.material
+    api dependency.recyclerview
+    api dependency.fragment_ktx
+
+    //glide图片
+    implementation dependency.glide
+    kapt dependency.glide_compiler
+
+    //http
+    implementation dependency.retrofit
+    api dependency.gson
+
+    //arouter
+    implementation dependency.arouter_api
+    kapt dependency.arouter_compiler
+    api project(':flutter')
+
+    //rn
+    if (enableHermes) {
+        def hermesPath = "../../rn_module/node_modules/hermesvm/android/";
+        debugImplementation files(hermesPath + "hermes-debug.aar")
+        releaseImplementation files(hermesPath + "hermes-release.aar")
+    } else {
+        implementation jscFlavor
+    }
+    implementation "com.facebook.react:react-native:+" // From node_modules
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    //rn end
+}

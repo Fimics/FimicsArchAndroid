@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <org.devio.hi.ui.title.HiNavigationBar
+        android:id="@+id/nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        app:nav_line_height="0px"
+        app:nav_title="@string/title_category" />
+
+
+    <org.devio.hi.ui.icfont.IconFontTextView
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"
+        android:layout_below="@+id/nav_bar"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@drawable/shape_home_search"
+        android:gravity="center"
+        android:text="@string/home_search_hint"
+        android:textColor="@color/color_9fa"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_below="@+id/search_container"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/color_eee" />
+
+
+    <org.devio.hi.ui.slider.HiSliderView
+        android:id="@+id/slider_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line" />
+
+    <include
+        android:id="@+id/content_loading"
+        layout="@layout/layout_content_loading_view" />
+</RelativeLayout>

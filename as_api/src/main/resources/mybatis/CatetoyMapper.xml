@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.as.api.mapper.CategoryMapper">
+    <select id="getCategoryList" resultType="com.example.as.api.entity.CategoryEntity">
+        SELECT
+            *
+        FROM
+            t_goods_category
+        ORDER BY
+            category_id
+    </select>
+    <insert id="addCategory">
+        INSERT INTO t_goods_category ( category_name, create_time )
+        VALUES
+            ( #{categoryName}, #{createTime} )
+
+    </insert>
+    <delete id="removeCategory">
+        DELETE
+            FROM
+                t_goods_category
+            WHERE
+                category_id = #{id}
+    </delete>
+</mapper>

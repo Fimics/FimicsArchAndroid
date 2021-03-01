@@ -1,0 +1,102 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.alibaba.arouter'
+apply plugin: 'dagger.hilt.android.plugin'
+//apply plugin: 'android-aspectjx'
+apply plugin: 'com.huawei.agconnect'
+
+apply from: '../project_config.gradle'
+apply from: '../flavor_channel.gradle'
+apply from: '../360protect.gradle'
+apply from: '../jenkins_package.gradle'
+
+def ext = rootProject.ext
+def dependency = rootProject.ext.dependencies
+
+//aspectjx {
+//    //排除所有特定class文件
+//    exclude 'module-info','com.taobao'
+//}
+
+//bugly
+//apply from: '../tinker-support.gradle'
+android {
+    signingConfigs {
+        config {
+            storeFile file('../as_key_store')
+            storePassword '123456'
+            keyAlias 'key0'
+            keyPassword '123456'
+        }
+    }
+
+    compileSdkVersion ext.compileSdkVersion
+    buildToolsVersion ext.buildToolsVersion
+    defaultConfig {
+        applicationId "org.devio.as.proj.main"
+        minSdkVersion ext.minSdkVersion
+        targetSdkVersion ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [AROUTER_MODULE_NAME: project.getName(), "room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+        //开启拆分包
+        multiDexEnabled true
+        //配置支持的动态库类型
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86','x86_64'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation dependency.appcompat
+    implementation project(path: ':hi-ui')
+    implementation project(path: ':hi-library')
+    implementation project(path: ':biz_home')
+    implementation project(path: ':biz_detail')
+    implementation project(path: ':biz_login')
+    implementation project(path: ':biz_search')
+    implementation project(path: ':biz_order')
+    implementation project(path: ':common')
+    debugImplementation project(path: ':hi_debugtool')
+
+    //arouter路由
+    implementation dependency.arouter_api
+    kapt dependency.arouter_compiler
+
+    //添加multidex
+    implementation dependency.multidex
+    //添加对bugly  和 tinker，包含了crash捕获和热修复
+    implementation dependency.crashreport_upgrade
+    implementation dependency.tinker_android_lib
+
+    //hilt
+    implementation dependency.hilt_android
+    kapt dependency.hilt_android_compiler
+    kapt dependency.hilt_compiler
+}
+
+//apply plugin: 'tinypng'

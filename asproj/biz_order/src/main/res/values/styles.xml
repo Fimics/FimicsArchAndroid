@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AddNewAddress">
+        <item name="android:paddingLeft">@dimen/dp_16</item>
+        <item name="android:paddingRight">@dimen/dp_16</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="bottomLineAppearance">@style/lineAppearance</item>
+        <item name="titleTextAppearance">@style/titleTextAppearance</item>
+        <item name="inputType">text</item>
+    </style>
+</resources>

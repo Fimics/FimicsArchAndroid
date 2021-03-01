@@ -1,0 +1,56 @@
+apply plugin: 'groovy'
+
+repositories {
+    google()
+    jcenter()
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //3.使用android plugin.相当于使用jetpack库
+    implementation 'com.android.tools.build:gradle:3.4.2'
+    //2.使用gradle api，相当于使用android sdk
+    implementation gradleApi()
+    //1.使用groovy库
+    implementation localGroovy()
+
+    implementation 'org.javassist:javassist:3.27.0-GA'
+    implementation 'com.tinify:tinify:1.6.2'
+}
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9'
+    }
+}
+
+def website = 'https://github.com/mrme2014/devio-plugin'      // 项目的主页
+def gitUrl = 'https://github.com/mrme2014/devio-plugin.git'   // Git仓库的url
+Properties properties = new Properties()
+properties.load(file('../local.properties').newDataInputStream())
+
+def user = properties.getProperty("bintray.user")
+def key = properties.getProperty("bintray.apikey")
+
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    userOrg = user
+    repoName = 'devio'
+    groupId = 'org.devio.as.proj.plugin'
+    artifactId = 'devio-plugin'
+    publishVersion = '1.0.2'
+    bintrayUser = user//用户名
+    bintrayKey = key//bintray秘钥
+    desc = 'Oh hi, this is a nice description for a project, right?'
+    website = website
+    dryRun =false
+    repository = gitUrl
+    autoPublish=true
+}
+
+//apply from: '../upload.gradle'

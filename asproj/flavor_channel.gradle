@@ -1,0 +1,47 @@
+apply plugin: 'channel'
+channel {
+    //指定渠道文件
+
+    channelFile = file("../flavor_channel.txt")
+    println("channelFile:" + channelFile.exists())
+    //多渠道包的输出目录，默认为new File(project.buildDir,"channel")
+    baseOutputDir = new File(project.buildDir, "channel")
+    //多渠道包的命名规则，默认为：${appName}-${versionName}-${versionCode}-${flavorName}-${buildType}
+    apkNameFormat = '${appName}-${versionName}-${flavorName}-${buildType}'
+    //快速模式：生成渠道包时不进行校验（速度可以提升10倍以上，默认为false）
+    isFastMode = false
+    //buildTime的时间格式，默认格式：yyyyMMdd-HHmmss
+    buildTimeDateFormat = 'yyyyMMdd-HH:mm:ss'
+    //低内存模式（仅针对V2签名，默认为false）：只把签名块、中央目录和EOCD读取到内存，不把最大头的内容块读取到内存，在手机上合成APK时，可以使用该模式
+    lowMemory = false
+}
+
+rebuildChannel {
+    //指定渠道文件
+    channelFile = new File("../flavor_channel.txt")
+    println("rebuildChannel:" + channelFile.exists())
+    baseDebugApk = new File(project.buildDir, "outputs/packers/app-release_10_jiagu_sign.apk")
+    baseReleaseApk = new File(project.buildDir, "outputs/packers/app-release_10_jiagu_sign.apk")
+    debugOutputDir = new File(project.buildDir, "outputs/rebuildChannel/debug")
+    releaseOutputDir = new File(project.buildDir, "outputs/rebuildChannel/release")
+    //快速模式：生成渠道包时不进行校验（速度可以提升10倍以上，默认为false）
+    isFastMode = false
+    //低内存模式（仅针对V2签名，默认为false）：只把签名块、中央目录和EOCD读取到内存，不把最大头的内容块读取到内存，在手机上合成APK时，可以使用该模式
+    lowMemory = false
+}
+/**
+ * apkNameFormat支持以下字段：
+ *
+ * appName ： 当前project的name
+ * versionName ： 当前Variant的versionName
+ * versionCode ： 当前Variant的versionCode
+ * buildType ： 当前Variant的buildType，即debug or release
+ * flavorName ： 当前的渠道名称
+ * appId ： 当前Variant的applicationId
+ * buildTime ： 当前编译构建日期时间，时间格式可以自定义，默认格式：yyyyMMdd-HHmmss
+ **/
+
+dependencies {
+    //多渠道
+    api 'com.leon.channel:helper:2.0.3'
+}

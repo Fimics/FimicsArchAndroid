@@ -1,0 +1,34 @@
+@startuml
+interface CoroutineContext{
+  <E: Element> get(key: Key<E>): E
+  plus(context: Element)
+  minusKey(key: Key<*>)
+}
+abstract class CoroutineDispatcher extends CoroutineContext{
+   abstract boolean needDispatch()  //询问调度器需不需要分发
+   abstract void dispatch(Runnable Runnable)//由子类去实现具体的调度
+
+   DispatchCoroutine interceptContinuation(Continuation continuation)
+}
+
+class HanderDispather extends CoroutineDispatcher{
+    boolean needDispatch()=>return true
+    dispatch(Runnable Runnable)=>{handler.post(runnable)}
+}
+
+class DefualtScheduler extends CoroutineDispatcher{
+    boolean needDispatch()=>return true
+    dispatch(Runnable Runnable)=>{executors.execute(runnable)}
+}
+
+class UnconfinedDispatcher extends CoroutineDispatcher{
+      boolean needDispatch()=>return false
+      dispatch(Runnable Runnable)=>{ }
+}
+
+note left of CoroutineDispatcher:协程运行线程的调度器
+note left of CoroutineContext:协程运行环境,数据存储,可以理解为用队列实现的数据集合
+note bottom of HanderDispather:能够让协程运行在主线程的调度器 \n**Dispatchers.Main**
+note bottom of DefualtScheduler:能够让协程运行在IO线程的调度器 \n**Dispatchers.Io,Dispatchers.Default**
+note bottom of UnconfinedDispatcher:能够让协程运行在当前线程的调度器\n**Dispatchers.Unconfined**
+@enduml

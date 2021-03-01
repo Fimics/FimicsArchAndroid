@@ -1,0 +1,4 @@
+#Fri May 22 16:58:34 CST 2020
+base.0=/Users/timian/Desktop/AndroidArchitect/AndroidArchitect/demo/hi_arouter/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

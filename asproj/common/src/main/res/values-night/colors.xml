@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_999">#ffffff</color>
+    <color name="color_f1">#ffffff</color>
+    <color name="color_000">#ffffff</color>
+    <color name="color_565">#ffffff</color>
+    <color name="color_d1d2">#ffffff</color>
+    <color name="color_C1B">#ffffff</color>
+    <color name="color_white">#000000</color>
+    <color name="color_298">#2983E5</color>
+    <color name="color_646">#646868</color>
+    <color name="color_dd2">#DD2F24</color>
+    <color name="color_de3">#DE3025</color>
+    <array name="color_d43">#D4372E</array>
+    <color name="color_9b9">#ffffff</color>
+    <color name="color_444">#ffffff</color>
+    <color name="color_eee">#ffffff</color>
+    <color name="color_fef">#000000</color>
+    <color name="color_666">#ffffff</color>
+    <color name="color_333">#ffffff</color>
+    <color name="color_656">#ffffff</color>
+    <color name="color_background">#000000</color>
+
+    <color name="color_eae">#445B63</color>
+    <color name="color_80eee">#000000</color>
+    <color name="color_e75">#E75B00</color>
+    <color name="color_faf">#000000</color>
+    <color name="color_f8e">#F8E6E6</color>
+    <color name="color_c61">#C61B00</color>
+    <color name="color_d9f">#D9F8CE</color>
+    <color name="color_00a">#00AD00</color>
+    <color name="color_faf0">#FAF0EE</color>
+    <color name="color_eed">#eed7ad</color>
+    <color name="color_d43">#d4372e</color>
+    <color name="color_4a4">#ffffff</color>
+    <color name="color_8f9">#000000</color>
+
+    <color name="color_9fa">#000000</color>
+    <color name="color_929">#ffffff</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--    TabBottom-->
+    <color name="tabBottomDefaultColor">#ffffff</color>
+    <color name="tabBottomTintColor">#ffd44949</color>
+    <color name="color_gray1">#000000</color>
+</resources>

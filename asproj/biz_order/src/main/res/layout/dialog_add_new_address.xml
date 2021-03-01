@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
+        android:background="@drawable/shape_dialog_add_new_address"
+        android:orientation="vertical">
+
+        <org.devio.hi.ui.title.HiNavigationBar
+            android:id="@+id/nav_nar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            app:nav_title="@string/title_new_address" />
+
+        <org.devio.hi.ui.input.InputItemLayout
+            android:id="@+id/user_name"
+            style="@style/AddNewAddress"
+            app:hint="@string/address_hint_recevier"
+            app:inputType="text"
+            app:title="@string/address_title_recevier" />
+
+
+        <org.devio.hi.ui.input.InputItemLayout
+            android:id="@+id/user_phone"
+            style="@style/AddNewAddress"
+            app:hint="@string/address_hint_phone"
+            app:inputType="number"
+            app:title="@string/address_title_phone" />
+
+
+        <org.devio.hi.ui.input.InputItemLayout
+            android:id="@+id/address_pick"
+            style="@style/AddNewAddress"
+            app:hint="@string/address_hint_pick"
+            app:inputType="text"
+            app:title="@string/address_title_area" />
+
+
+        <org.devio.hi.ui.input.InputItemLayout
+            android:id="@+id/address_detail"
+            style="@style/AddNewAddress"
+            android:layout_height="90dp"
+            app:hint="@string/address_hint_detail"
+            app:inputType="text"
+            app:title="@string/address_title_detail" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/action_save_address"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_margin="@dimen/dp_16"
+            android:backgroundTint="@color/color_dd2"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="@string/address_save"
+            android:textColor="@color/color_white" />
+    </LinearLayout>
+
+</FrameLayout>

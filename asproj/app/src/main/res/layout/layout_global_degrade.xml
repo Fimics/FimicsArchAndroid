@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <org.devio.hi.ui.icfont.IconFontTextView
+        android:id="@+id/action_back"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:gravity="center"
+        android:text="@string/if_back_soild"
+        android:textSize="@dimen/sp_30"></org.devio.hi.ui.icfont.IconFontTextView>
+
+    <org.devio.hi.ui.empty.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></org.devio.hi.ui.empty.EmptyView>
+
+</LinearLayout>

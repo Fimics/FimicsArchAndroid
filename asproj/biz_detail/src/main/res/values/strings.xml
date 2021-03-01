@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shop_desc" formatted="false">商品数量：%s 已拼:%s </string>
+    <string name="item_similar_title"> 相似商品</string>
+    <string name="detail_favorite_success">收藏成功</string>
+    <string name="detail_cancel_favorite">取消收藏成功</string>
+    <string name="detail_order_action">\n立即购买</string>
+</resources>

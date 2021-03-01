@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/color_white" />
+    <item
+        android:drawable="@mipmap/launch_splash_center"
+        android:gravity="center" />
+
+
+<!--    <item-->
+<!--        android:width="@dimen/dp_40"-->
+<!--        android:height="@dimen/dp_40"-->
+<!--        android:drawable="@drawable/rotate_daisy"-->
+<!--        android:gravity="bottom|center" />-->
+</layer-list>

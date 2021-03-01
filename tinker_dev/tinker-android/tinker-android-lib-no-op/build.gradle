@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+version rootProject.ext.VERSION_NAME
+group rootProject.ext.GROUP
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        consumerProguardFiles file('../consumer-proguard.txt')
+    }
+
+    lintOptions {
+        disable 'LongLogTag'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation project(':tinker-android:tinker-android-anno-support')
+    api project(':tinker-android:tinker-android-loader-no-op')
+    api project(':tinker-commons')
+}
+
+task buildTinkerSdk(type: Copy, dependsOn: [build]) {
+    group = "tinker"
+    from("$buildDir/outputs/aar/") {
+        include "${project.getName()}-release.aar"
+    }
+
+    into(rootProject.file("buildSdk/android/"))
+    rename { String fileName ->
+        fileName.replace("release", "${version}")
+    }
+}
+
+apply from: rootProject.file('gradle/android-artifacts.gradle')
+apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+
+
+
+

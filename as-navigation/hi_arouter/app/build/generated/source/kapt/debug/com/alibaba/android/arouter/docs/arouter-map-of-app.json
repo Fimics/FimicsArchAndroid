@@ -1,0 +1,40 @@
+{
+	"fragment":[
+		{
+			"group":"fragment",
+			"path":"/fragment/first",
+			"className":"org.devio.as.hi.hi_arouter.FirstFragment",
+			"type":"fragment",
+			"mark":-2147483648
+		}
+	],
+	"activity":[
+		{
+			"group":"activity",
+			"path":"/activity/second",
+			"className":"org.devio.as.hi.hi_arouter.SecondActivity",
+			"type":"activity",
+			"mark":-2147483648
+		}
+	],
+	"service":[
+		{
+			"group":"service",
+			"path":"/service/login",
+			"prototype":"null, org.devio.as.hi.hi_arouter.ILoginService",
+			"className":"org.devio.as.hi.hi_arouter.LoginServiceImpl",
+			"type":"provider",
+			"mark":-2147483648
+		}
+	],
+	"pathReplace":[
+		{
+			"group":"pathReplace",
+			"path":"/pathReplace/service",
+			"prototype":"null, com.alibaba.android.arouter.facade.service.PathReplaceService",
+			"className":"org.devio.as.hi.hi_arouter.PathReplaceServiceImpl",
+			"type":"provider",
+			"mark":-2147483648
+		}
+	]
+}

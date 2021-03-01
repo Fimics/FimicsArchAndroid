@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="item_collection">&#xe604;   我的收藏</string>
+    <string name="item_notify">&#xe654;  课程通知</string>
+    <string name="item_history">&#xe606;   浏览历史</string>
+    <string name="item_playground">&#xe640;   playground</string>
+    <string name="item_address">&#xe603;   收货地址</string>
+    <string name="profile_login_desc_welcome_back">Hi，欢迎回来</string>
+    <string name="profile_not_login">请先登陆</string>
+    <string name="profile_login_desc">解锁全部功能,畅享架构师专属福利</string>
+    <string name="profile_tab_item_collection">\n收藏</string>
+    <string name="profile_tab_item_history">\n历史浏览</string>
+    <string name="profile_tab_item_learn">\n学习时长</string>
+    <string name="home_search_hint">&#xe987;  搜索你想要的商品</string>
+    <string name="title_category">分类</string>
+    <string name="fetch_user_profile_failed">用户信息获取失败</string>
+    <string name="title_notice">公告</string>
+    <string name="title_recommend">精选推荐</string>
+    <string name="title_favorite">商品收藏</string>
+</resources>

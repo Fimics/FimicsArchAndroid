@@ -1,0 +1,21 @@
+apply plugin: 'groovy'
+
+repositories {
+    google()
+    jcenter()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //1.使用android plugin.相当于使用jetpack库
+    implementation 'com.android.tools.build:gradle:3.4.2'
+    //2.Gradle Plugin 依赖
+    implementation gradleApi()
+    //3.本地发布 Plugin
+    implementation localGroovy()
+    //4.TinyPng
+    implementation 'com.tinify:tinify:1.6.4'
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

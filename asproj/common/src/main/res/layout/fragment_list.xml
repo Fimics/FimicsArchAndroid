@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.devio.hi.ui.refresh.HiRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <org.devio.hi.ui.recyclerview.HiRecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </org.devio.hi.ui.refresh.HiRefreshLayout>
+
+    <org.devio.hi.ui.empty.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <!--    <<androidx.core.widget.ContentLoadingProgressBar-->
+    <!--        android:id="@+id/content_loading"-->
+    <!--        style="@style/Widget.AppCompat.ProgressBar"-->
+    <!--        android:layout_width="25dp"-->
+    <!--        android:layout_height="25dp"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:indeterminateTint="@color/color_999" />>-->
+
+    <include layout="@layout/layout_content_loading_view" />
+</FrameLayout>

@@ -1,0 +1,18 @@
+@startuml
+
+component SearchActivity{
+}
+component EmptyView{
+}
+component HistoryView{
+}
+component QuickSearchView{
+}
+component GoodsSearchView{
+}
+
+SearchActivity-->EmptyView:status_empty
+SearchActivity-->HistoryView:status_history
+SearchActivity-->QuickSearchView:status_quick_search
+SearchActivity-->GoodsSearchView:status_goods_search
+@enduml

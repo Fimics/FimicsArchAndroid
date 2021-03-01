@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="degrade_tips">页面跑远了,开发小哥正在加急修复中...</string>
+    <string name="title_login">登录</string>
+    <string name="title_register">注册</string>
+    <string name="input_item_title_user_name">用户名</string>
+    <string name="input_item_hint_user_name">请输入用户名</string>
+    <string name="login_desc_forget_pwd">提示：如果你忘记了密码，重新注册即可</string>
+    <string name="input_item_desc_pwd">请输入密码</string>
+    <string name="input_item_title_pwd">密码</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_failed">登陆失败:</string>
+    <string name="input_item_title_course_order_id">课程订单号</string>
+    <string name="input_item_hint_order_id">请输入课程的订单号后四位</string>
+    <string name="action_submit">提交</string>
+    <string name="input_item_title_moocid">慕课账号ID</string>
+    <string name="input_item_hint_moocid">请输入慕课账号ID</string>
+    <string name="input_item_hint_pwd">请输入密码</string>
+    <string name="input_item_hint_pwd2">请再次输入密码</string>
+    <string name="input_item_title_pwd2">确认密码</string>
+</resources>

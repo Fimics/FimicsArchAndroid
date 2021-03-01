@@ -1,0 +1,53 @@
+@startuml
+HiAdapter o--HiDataItem
+HiDataItem o--TopTabsItem
+HiDataItem o--BannerDataItem
+HiDataItem o--ActivityItem
+HiDataItem o--GridItem
+
+class HiAdapter{
+List<HiDataItem> dataSets        //列表数据集
+SparseArray<HiDataItem> typeArrays //itemViewType类型与HiDataItem对应的集合
+
+void addItem(int index,HiDataItem item)//注册一条数据
+void addItems(List<HiDataItem> items)
+void removeItem(int index)//移除对应下标的数据
+void removeItems(List<HiDataItem> items)
+}
+note left: 通用数据适配器
+
+abstract class HiDataItem<DATA,VH extends ViewHolder> {
+DATA mData;//该Item的数据对象
+abstract void onBindData(ViewHolder holder, int position)//绑定数据
+int getItemLayoutRes()//获取该Item的布局资源
+View getItemView(ViewGroup parent)//获取该Item的视图
+void refreshItem()//刷新列表
+void removeItem()//从列表上移除
+int  getSpanSize()//占几列
+}
+note left:列表Item数据绑定,业务处理
+
+
+
+
+class BannerDataItem{
+
+}
+note bottom:banner区域Item
+
+class TopTabsItem{
+
+}
+note bottom:顶部tab栏区块Item
+
+class GridItem{
+
+}
+note bottom:网格区域Item
+
+class ActivityItem{
+
+}
+note bottom:活动区域Item
+
+@enduml

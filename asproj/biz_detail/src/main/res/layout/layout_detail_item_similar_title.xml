@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.devio.hi.ui.icfont.IconFontTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_45"
+    android:gravity="center"
+    android:textColor="@color/color_dd2"
+    android:textSize="@dimen/sp_16"
+    android:background="@color/color_white"
+    android:layout_marginTop="@dimen/dp_10"
+    android:textStyle="bold"
+    android:text="@string/item_similar_title">
+
+</org.devio.hi.ui.icfont.IconFontTextView>

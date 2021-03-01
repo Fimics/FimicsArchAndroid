@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    <base-config cleartextTrafficPermitted="true" />-->
+    <!--    &lt;!&ndash;  debug-overrides是只有在客户单的debuggable 属性为true的情况下 才会信任这里的证书  &ndash;&gt;-->
+    <!--    <debug-overrides>-->
+    <!--        <trust-anchors>-->
+    <!--            <certificates src="@raw/charles" />-->
+    <!--        </trust-anchors>-->
+    <!--    </debug-overrides>-->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates
+                overridePins="true"
+                src="system" />
+            <certificates
+                overridePins="true"
+                src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

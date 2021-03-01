@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.as.api.mapper.UserMapper">
+    <update id="updateUser">
+        UPDATE t_user
+            SET
+            forbid=#{forbid}
+            WHERE
+             uid=#{uid}
+    </update>
+    <select id="getUserList" resultType="com.example.as.api.entity.UserEntity">
+        SELECT
+            *
+        FROM
+            t_user
+    </select>
+    <insert id="addUser">
+            INSERT INTO t_user ( user_name, pwd, imooc_id, order_id, create_time )
+            VALUES
+                ( #{userName}, #{password}, #{imoocId}, #{orderId}, #{createTime} )
+                ON DUPLICATE KEY UPDATE
+                pwd=VALUES (pwd)
+                ,user_name=VALUES (user_name)
+    </insert>
+    <select id="findUser" resultType="com.example.as.api.entity.UserEntity">
+            SELECT
+                *
+            FROM
+                t_user
+            WHERE
+                user_name = #{userName}
+
+    </select>
+</mapper>
