@@ -29,27 +29,30 @@ buildscript {
     }
 }
 
-def website = 'https://github.com/mrme2014/devio-plugin'      // 项目的主页
-def gitUrl = 'https://github.com/mrme2014/devio-plugin.git'   // Git仓库的url
+def website = 'https://github.com/Fimics/FimicsJCenter'      // 项目的主页
+def gitUrl = 'https://github.com/Fimics/FimicsJCenter.git'   // Git仓库的url
 Properties properties = new Properties()
 properties.load(file('../local.properties').newDataInputStream())
 
 def user = properties.getProperty("bintray.user")
 def key = properties.getProperty("bintray.apikey")
 
+//8cac53c53864c073170a240336ff0f0d88bffd97
+// repo mxplayer
+
 apply plugin: 'com.novoda.bintray-release'
 publish {
-    userOrg = user
-    repoName = 'devio'
+    userOrg = 'lpjhblpj'
+    repoName = 'mxplayer'
     groupId = 'org.devio.as.proj.plugin'
     artifactId = 'devio-plugin'
     publishVersion = '1.0.2'
-    bintrayUser = user//用户名
+    bintrayUser = user//用户名 使用从Properties读取进来的就可以了
     bintrayKey = key//bintray秘钥
     desc = 'Oh hi, this is a nice description for a project, right?'
     website = website
-    dryRun =false
-    repository = gitUrl
+    dryRun =false  //是否自动打包，提交到Jcenter
+    repository = gitUrl //项目仓库地址
     autoPublish=true
 }
 
