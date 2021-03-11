@@ -39,6 +39,7 @@ def key = properties.getProperty("bintray.apikey")
 
 //8cac53c53864c073170a240336ff0f0d88bffd97
 // repo mxplayer
+//https://bintray.com/lpjhblpj/mxplayer/devio-plugin
 
 apply plugin: 'com.novoda.bintray-release'
 publish {
