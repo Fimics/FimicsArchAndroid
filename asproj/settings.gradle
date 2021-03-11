@@ -1,3 +1,4 @@
+rootProject.name = 'asproj'
 include ':hi-ability'
 include ':buildSrc'
 include ':biz_order'
@@ -9,7 +10,6 @@ include ':biz_login'
 include ':biz_home'
 include ':hi_debugtool'
 include ':app'
-rootProject.name = 'ASProj'
 
 include ':hi-library'
 project(':hi-library').projectDir = "../hi-library/hilibrary" as File
