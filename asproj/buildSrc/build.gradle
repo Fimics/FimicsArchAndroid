@@ -28,7 +28,8 @@ buildscript {
         classpath 'com.novoda:bintray-release:0.9'
     }
 }
-
+//def website = 'https://github.com/mrme2014/devio-plugin'      // 项目的主页
+//def gitUrl = 'https://github.com/mrme2014/devio-plugin.git'   // Git仓库的url
 def website = 'https://github.com/Fimics/FimicsJCenter'      // 项目的主页
 def gitUrl = 'https://github.com/Fimics/FimicsJCenter.git'   // Git仓库的url
 Properties properties = new Properties()
